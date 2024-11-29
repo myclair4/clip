@@ -11,9 +11,9 @@ export async function onRequest(context) {
     const key = `visitor:${Date.now()}:${Math.random()}`;
     await kvNamespace.put(key, JSON.stringify(visitor));
 
-    console.log("Data pengunjung disimpan:", visitor);
+    console.log("ok save:", visitor);
 
     // 
-    return new Response('Data pengunjung disimpan!', { status: 200 });
+    return new Response('ok save!', { status: 200 });
 }
 
