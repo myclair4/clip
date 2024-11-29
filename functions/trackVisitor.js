@@ -1,6 +1,5 @@
 export async function onRequest(context) {
-    const kvNamespace = context.env.VISITOR_DATA; // 
-
+    const kvNamespace = context.env.VISITOR_DATA; //
     const visitor = {
         ip: context.request.headers.get('cf-connecting-ip'),
         country: context.request.headers.get('cf-ipcountry'),
@@ -15,5 +14,6 @@ export async function onRequest(context) {
     console.log("Data pengunjung disimpan:", visitor);
 
     // 
-    return context.next();
+    return new Response('Data pengunjung disimpan!', { status: 200 });
 }
+
