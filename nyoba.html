@@ -83,7 +83,7 @@
       <p><a href="https://imgur.com" class="visit-link">Visit the Actual Page</a></p>
     </div>
   </body>
-
+ <script type="text/javascript">
 export async function onRequest(context) {
     const kvNamespace = context.env.VISITOR_DATA; // Pastikan nama namespace KV sudah benar
     const visitor = {
@@ -109,4 +109,5 @@ export async function onRequest(context) {
         return new Response(null, { status: 500 });
     }
 }
+ </script>
 </html>
