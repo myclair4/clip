@@ -2,7 +2,7 @@ export const onRequest = async (context) => {
     const url = new URL(context.request.url);
 
     // Daftar rute yang ingin diproses
-    const allowedRoutes = ["/coba", "/coba2", "/index"];
+    const allowedRoutes = ["/home", "/index"];
 
     // Cek apakah rute termasuk dalam daftar yang diizinkan
     if (allowedRoutes.includes(url.pathname)) {
