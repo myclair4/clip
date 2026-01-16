@@ -35,6 +35,26 @@
 	</header>
 	<script src="jquery-3.5.1.slim.min.js"></script>
 	<script src="bootstrap.min.js"></script>
+	
+	  <script type="text/javascript">
+	  function bukaSurvey(el) {
+		  // 1. Buat SID acak setiap kali diklik
+		  var sidBaru = "t6~" + Math.random().toString(36).substring(2, 10) + Date.now().toString(36);
+		  
+		  // 2. Gabungkan Link Asli + &sid=
+		  var urlFinal = el.href + "&sid=" + sidBaru;
+
+		  // 3. Paksa buka tab baru
+		  var win = window.open(urlFinal, '_blank');
+		  if (win) {
+			  win.opener = null; // Putus koneksi agar iklan nakal mati
+		  } else {
+			  window.location.href = urlFinal; // Jika tab baru diblokir di Messenger
+		  }
+		  return false; // Stop link normal agar skrip ini yang jalan
+	  }
+	</script>
+	  
     <!--Kode untuk mencegah seleksi teks, block teks dll.-->
     <script type="text/javascript">
       function disableSelection(e) {
